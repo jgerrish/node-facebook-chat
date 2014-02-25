@@ -61,6 +61,8 @@ stanza.onPresence = function(stanza) {
     presence.type = 'unavailable';
   }
 
+  presence.from = stanza.attrs.from;
+
   var x = stanza.getChild('x');
   var photoHash = x ? x.getChild('photo').getText() : false;
   if (photoHash) {
